@@ -323,6 +323,10 @@ except Exception as e:
     model_loaded = False
     model_error = str(e)
 
+import sklearn
+
+st.write("🔍 sklearn version:", sklearn.__version__)
+st.write("🔍 Model type:", type(model).__name__)
 
 # =========================
 # Title
