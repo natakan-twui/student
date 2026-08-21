@@ -323,11 +323,6 @@ except Exception as e:
     model_loaded = False
     model_error = str(e)
 
-import sklearn
-
-st.write("🔍 sklearn version:", sklearn.__version__)
-st.write("🔍 Model type:", type(model).__name__)
-
 # =========================
 # Title
 # =========================
@@ -724,16 +719,15 @@ if submitted:
 
     try:
 
-        st.write("🔍 INPUT DATA")
-        st.dataframe(input_data)
+        prediction = model.predict(input_data)[0]
 
-        prediction_raw = model.predict(input_data)
+        # =====================
+        # Result
+        # =====================
 
-        st.write("🔍 RAW PREDICTION:", prediction_raw)
+        st.divider()
 
-        prediction = prediction_raw[0]
-
-        st.write("🔍 PREDICTION VALUE:", prediction)
+        st.header("📊 ผลการทำนาย")
 
         if prediction == 1:
 
