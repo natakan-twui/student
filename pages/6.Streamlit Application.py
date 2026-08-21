@@ -724,16 +724,16 @@ if submitted:
 
     try:
 
-    st.write("🔍 INPUT DATA")
-    st.dataframe(input_data)
+        st.write("🔍 INPUT DATA")
+        st.dataframe(input_data)
 
-    prediction_raw = model.predict(input_data)
+        prediction_raw = model.predict(input_data)
 
-    st.write("🔍 RAW PREDICTION:", prediction_raw)
+        st.write("🔍 RAW PREDICTION:", prediction_raw)
 
-    prediction = prediction_raw[0]
+        prediction = prediction_raw[0]
 
-    st.write("🔍 PREDICTION VALUE:", prediction)
+        st.write("🔍 PREDICTION VALUE:", prediction)
 
         if prediction == 1:
 
