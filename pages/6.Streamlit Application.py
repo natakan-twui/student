@@ -724,15 +724,16 @@ if submitted:
 
     try:
 
-        prediction = model.predict(input_data)[0]
+    st.write("🔍 INPUT DATA")
+    st.dataframe(input_data)
 
-        # =====================
-        # Result
-        # =====================
+    prediction_raw = model.predict(input_data)
 
-        st.divider()
+    st.write("🔍 RAW PREDICTION:", prediction_raw)
 
-        st.header("📊 ผลการทำนาย")
+    prediction = prediction_raw[0]
+
+    st.write("🔍 PREDICTION VALUE:", prediction)
 
         if prediction == 1:
 
